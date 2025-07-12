@@ -6,6 +6,7 @@ import { clerkMiddleware } from '@clerk/express'
 import { serve } from "inngest/express";
 import { inngest, functions } from "./inngest/index.js"
 import showRouter from './routes/showRoute.js'
+import bookingRouter from './routes/bookingRoute.js'
 
 
 
@@ -22,5 +23,6 @@ app.use(clerkMiddleware())
 app.get('/',(req, res)=> res.send('server is alive'))
 app.use("/api/inngest", serve({ client: inngest, functions }));
 app.use('/api/show', showRouter)
+app.use('/api/booking', bookingRouter)
 
 app.listen(port, ()=> console.log(`Server listening at port : ${port}`))

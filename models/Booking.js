@@ -4,11 +4,11 @@ const bookingSchema = new mongoose.Schema({
     user: {type:String, required: true, ref:'User'},
     show: {type:String, required: true, ref:'Show'},
     amount: {type:Number, required: true},
-    bookSeats: {type:Array, required: true},
-    isPaid: {type:Booleans, required: true},
-    PaymenLink: {type:String},
+    bookedSeats: {type:Array, required: true},
+    isPaid: {type:Boolean, required: true},
+    PaymentLink: {type:String},
 })
 
-const Movie = mongoose.model('Booking', bookingSchema)
+const Booking = mongoose.model('Booking', bookingSchema)
 
-export default Movie;
+export default Booking;
