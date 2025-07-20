@@ -1,5 +1,6 @@
 import Booking from './../models/Booking.js';
 import { clerkClient } from '@clerk/clerk-sdk-node';
+import Movie from './../models/Movie.js';
 
 
 const getUserBookings = async(req, res) =>{
